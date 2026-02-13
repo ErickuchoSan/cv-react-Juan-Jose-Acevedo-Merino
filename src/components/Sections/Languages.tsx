@@ -1,21 +1,24 @@
 import React from 'react';
 import { SectionTitle } from '../UI/SectionTitle';
 import { FaLanguage } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 
 export const Languages: React.FC = () => {
+    const { t } = useLanguage();
+
     const languages = [
         {
-            name: 'Español',
-            level: 'Nativo',
-            percentage: 100,
-            details: ['Lengua materna', 'Comunicación profesional'],
+            name: t.languages.items[0].name,
+            level: t.languages.items[0].level,
+            percentage: t.languages.items[0].percentage,
+            details: t.languages.items[0].details,
             color: 'from-green-500 to-green-600'
         },
         {
-            name: 'Inglés',
-            level: 'B1 - Intermedio',
-            percentage: 60,
-            details: ['Lectura técnica', 'Comunicación básica profesional'],
+            name: t.languages.items[1].name,
+            level: t.languages.items[1].level,
+            percentage: t.languages.items[1].percentage,
+            details: t.languages.items[1].details,
             color: 'from-slate-500 to-slate-600'
         }
     ];
@@ -24,8 +27,8 @@ export const Languages: React.FC = () => {
         <section id="idiomas" className="enhanced-section section-tech-bg py-16 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
             <div className="max-w-6xl mx-auto px-4 relative z-10">
                 <SectionTitle
-                    title="Idiomas"
-                    subtitle="Competencias Lingüísticas"
+                    title={t.languages.title}
+                    subtitle={t.languages.subtitle}
                 />
 
                 <div className="flex justify-center">
@@ -55,7 +58,7 @@ export const Languages: React.FC = () => {
                                 </div>
 
                                 <ul className="space-y-1">
-                                    {lang.details.map((detail, i) => (
+                                    {lang.details.map((detail: string, i: number) => (
                                         <li key={i} className="text-sm text-slate-600 dark:text-slate-400 flex items-center">
                                             <span className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></span>
                                             {detail}

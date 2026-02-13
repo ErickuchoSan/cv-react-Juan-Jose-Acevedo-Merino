@@ -9,6 +9,7 @@ import {
     SiSharp, SiDotnet, SiAngular, SiReact, SiJquery,
     SiMysql
 } from 'react-icons/si';
+import { useLanguage } from '../../context/LanguageContext';
 
 interface TechCategoryProps {
     title: string;
@@ -34,6 +35,20 @@ const TechCategory: React.FC<TechCategoryProps> = ({ title, icon: Icon, items })
 );
 
 export const Skills: React.FC = () => {
+    const { t } = useLanguage();
+
+    const softSkills = [
+        { icon: FaProjectDiagram, title: t.skills.softSkills.items[0].title, desc: t.skills.softSkills.items[0].desc },
+        { icon: FaUsers, title: t.skills.softSkills.items[1].title, desc: t.skills.softSkills.items[1].desc },
+        { icon: FaComments, title: t.skills.softSkills.items[2].title, desc: t.skills.softSkills.items[2].desc },
+        { icon: FaHandshake, title: t.skills.softSkills.items[3].title, desc: t.skills.softSkills.items[3].desc },
+        { icon: FaChartBar, title: t.skills.softSkills.items[4].title, desc: t.skills.softSkills.items[4].desc },
+        { icon: FaTasks, title: t.skills.softSkills.items[5].title, desc: t.skills.softSkills.items[5].desc },
+        { icon: FaLightbulb, title: t.skills.softSkills.items[6].title, desc: t.skills.softSkills.items[6].desc },
+        { icon: FaCogs, title: t.skills.softSkills.items[7].title, desc: t.skills.softSkills.items[7].desc },
+        { icon: FaCode, title: t.skills.softSkills.items[8].title, desc: t.skills.softSkills.items[8].desc },
+    ];
+
     return (
         <section id="habilidades" className="enhanced-section section-tech-bg py-20 bg-gray-50 dark:bg-gray-900 relative">
             <div className="section-particles">
@@ -44,13 +59,13 @@ export const Skills: React.FC = () => {
 
             <div className="max-w-6xl mx-auto px-4 relative z-10">
                 <SectionTitle
-                    title="Habilidades"
-                    subtitle="Stack tecnológico y competencias profesionales"
+                    title={t.skills.title}
+                    subtitle={t.skills.subtitle}
                 />
 
                 {/* Main Skills with Progress Bars */}
                 <div className="mb-16">
-                    <h3 className="text-2xl font-bold text-center mb-12 text-slate-800 dark:text-slate-200">Tecnologías Principales</h3>
+                    <h3 className="text-2xl font-bold text-center mb-12 text-slate-800 dark:text-slate-200">{t.skills.mainTech}</h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
                             { icon: SiSharp, color: 'text-purple-600', name: 'C# / .NET', progress: 95 },
@@ -78,7 +93,7 @@ export const Skills: React.FC = () => {
                 {/* Tech Categories */}
                 <div className="grid md:grid-cols-2 gap-8 mb-16">
                     <TechCategory
-                        title="Lenguajes & Frameworks"
+                        title={t.skills.categories.languages}
                         icon={FaCode}
                         items={[
                             { name: 'C#', icon: SiSharp, color: 'text-purple-600' },
@@ -89,7 +104,7 @@ export const Skills: React.FC = () => {
                         ]}
                     />
                     <TechCategory
-                        title="Bases de Datos"
+                        title={t.skills.categories.databases}
                         icon={FaDatabase}
                         items={[
                             { name: 'SQL Server', icon: FaDatabase, color: 'text-red-600' },
@@ -99,7 +114,7 @@ export const Skills: React.FC = () => {
                         ]}
                     />
                     <TechCategory
-                        title="Patrones de Arquitectura"
+                        title={t.skills.categories.patterns}
                         icon={FaLayerGroup}
                         items={[
                             { name: 'MVC', icon: FaLayerGroup, color: 'text-blue-600' },
@@ -108,7 +123,7 @@ export const Skills: React.FC = () => {
                         ]}
                     />
                     <TechCategory
-                        title="Seguridad & DevOps"
+                        title={t.skills.categories.security}
                         icon={FaShieldAlt}
                         items={[
                             { name: 'JWT & Tokens', icon: FaShieldAlt, color: 'text-green-600' },
@@ -121,19 +136,9 @@ export const Skills: React.FC = () => {
 
                 {/* Soft Skills & Competencies */}
                 <div>
-                    <h3 className="text-2xl font-bold text-center mb-12 text-slate-800 dark:text-slate-200">Competencias Clave</h3>
+                    <h3 className="text-2xl font-bold text-center mb-12 text-slate-800 dark:text-slate-200">{t.skills.softSkills.title}</h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {[
-                            { icon: FaProjectDiagram, title: 'Liderazgo de Proyectos', desc: 'Coordinación de equipos y gestión ágil con Scrum' },
-                            { icon: FaUsers, title: 'Trabajo en Equipo', desc: 'Colaboración efectiva con equipos multidisciplinarios' },
-                            { icon: FaComments, title: 'Comunicación', desc: 'Intermediario entre desarrollo, usuarios y gerencia' },
-                            { icon: FaHandshake, title: 'Negociación', desc: 'Priorización y definición de requerimientos' },
-                            { icon: FaChartBar, title: 'Análisis de Requerimientos', desc: 'Levantamiento y análisis exhaustivo de necesidades' },
-                            { icon: FaTasks, title: 'Metodologías Ágiles', desc: 'Scrum, planificación de sprints y entregables' },
-                            { icon: FaLightbulb, title: 'Resolución de Problemas', desc: 'Enfoque analítico para soluciones complejas' },
-                            { icon: FaCogs, title: 'Optimización', desc: 'Mejora continua de procesos y sistemas' },
-                            { icon: FaCode, title: 'Best Practices', desc: 'Código limpio, documentación y estándares' },
-                        ].map((skill, index) => (
+                        {softSkills.map((skill, index) => (
                             <div key={index} className="soft-skill-card glass-card tech-hover-effect p-6 text-center border-t-2 border-t-transparent hover:border-t-amber-500 transition-colors">
                                 <skill.icon className="text-3xl text-amber-600 mb-4 mx-auto" />
                                 <h4 className="font-semibold mb-2 text-slate-800 dark:text-slate-200 text-lg">{skill.title}</h4>

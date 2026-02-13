@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { SectionTitle } from '../UI/SectionTitle';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 
 export const Contact: React.FC = () => {
+    const { t } = useLanguage();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -17,7 +19,7 @@ export const Contact: React.FC = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         console.log('Form submitted:', formData);
-        alert('Mensaje enviado (simulación)');
+        alert(t.contact.send); // Using button text as alert for now, or could add a specific success message to translations later
     };
 
     return (
@@ -30,14 +32,14 @@ export const Contact: React.FC = () => {
 
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <SectionTitle
-                    title="Contáctame"
-                    subtitle="¿Tienes un proyecto o una oportunidad? ¡Hablemos!"
+                    title={t.contact.title}
+                    subtitle={t.contact.subtitle}
                 />
 
                 <div className="grid md:grid-cols-2 gap-12">
                     {/* Contact Info */}
                     <div>
-                        <h3 className="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-200">Información de Contacto</h3>
+                        <h3 className="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-200">{t.contact.infoTitle}</h3>
                         <div className="space-y-6">
                             <div className="contact-item glass-card tech-hover-effect p-4 flex items-start space-x-4 border-l-4 border-l-amber-500/0 hover:border-l-amber-500 transition-all">
                                 <div className="contact-icon w-12 h-12 bg-slate-100 dark:bg-slate-800 rounded-lg flex items-center justify-center text-amber-600 dark:text-amber-500">
@@ -56,7 +58,7 @@ export const Contact: React.FC = () => {
                                     <FaPhone className="text-xl" />
                                 </div>
                                 <div>
-                                    <h4 className="font-semibold text-slate-800 dark:text-slate-200">Teléfono</h4>
+                                    <h4 className="font-semibold text-slate-800 dark:text-slate-200">{t.contact.phone}</h4>
                                     <a href="tel:+525533108924" className="text-amber-600 hover:text-amber-700 transition-colors">
                                         55 3310 8924
                                     </a>
@@ -68,7 +70,7 @@ export const Contact: React.FC = () => {
                                     <FaMapMarkerAlt className="text-xl" />
                                 </div>
                                 <div>
-                                    <h4 className="font-semibold text-slate-800 dark:text-slate-200">Ubicación</h4>
+                                    <h4 className="font-semibold text-slate-800 dark:text-slate-200">{t.contact.location}</h4>
                                     <p className="text-slate-600 dark:text-slate-300">
                                         Cuauhtémoc, Ciudad de México
                                     </p>
@@ -79,11 +81,11 @@ export const Contact: React.FC = () => {
 
                     {/* Form */}
                     <div>
-                        <h3 className="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-200">Envíame un Mensaje</h3>
+                        <h3 className="text-2xl font-bold mb-8 text-gray-800 dark:text-gray-200">{t.contact.formTitle}</h3>
                         <form className="form-container" onSubmit={handleSubmit} noValidate>
                             <div className="form-grid grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
                                 <div className="form-field">
-                                    <label htmlFor="name" className="form-label mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">Nombre *</label>
+                                    <label htmlFor="name" className="form-label mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">{t.contact.name} *</label>
                                     <input
                                         type="text"
                                         id="name"
@@ -92,11 +94,11 @@ export const Contact: React.FC = () => {
                                         onChange={handleChange}
                                         className="form-input w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-800/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                                         required
-                                        placeholder="Tu nombre completo"
+                                        placeholder={t.contact.name}
                                     />
                                 </div>
                                 <div className="form-field">
-                                    <label htmlFor="email" className="form-label mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">Email *</label>
+                                    <label htmlFor="email" className="form-label mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">{t.contact.email} *</label>
                                     <input
                                         type="email"
                                         id="email"
@@ -111,7 +113,7 @@ export const Contact: React.FC = () => {
                             </div>
 
                             <div className="form-field mb-6">
-                                <label htmlFor="subject" className="form-label mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">Asunto</label>
+                                <label htmlFor="subject" className="form-label mb-2 block text-sm font-medium text-gray-700 dark:text-gray-300">{t.contact.subject}</label>
                                 <input
                                     type="text"
                                     id="subject"
@@ -119,12 +121,12 @@ export const Contact: React.FC = () => {
                                     value={formData.subject}
                                     onChange={handleChange}
                                     className="form-input w-full px-4 py-3 rounded-lg border border-gray-300 dark:border-gray-600 bg-white/80 dark:bg-gray-800/80 focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                                    placeholder="Asunto del mensaje"
+                                    placeholder={t.contact.subject}
                                 />
                             </div>
 
                             <div className="form-field mb-6">
-                                <label htmlFor="message" className="form-label mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">Mensaje *</label>
+                                <label htmlFor="message" className="form-label mb-2 block text-sm font-medium text-slate-700 dark:text-slate-300">{t.contact.message} *</label>
                                 <textarea
                                     id="message"
                                     name="message"
@@ -132,12 +134,12 @@ export const Contact: React.FC = () => {
                                     onChange={handleChange}
                                     className="form-input form-textarea w-full px-4 py-3 rounded-lg border border-slate-300 dark:border-slate-600 bg-white/80 dark:bg-slate-800/80 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all h-32 resize-none"
                                     required
-                                    placeholder="Tu mensaje..."
+                                    placeholder={t.contact.message}
                                 ></textarea>
                             </div>
 
                             <button type="submit" className="btn-tech-primary w-full justify-center">
-                                Enviar Mensaje
+                                {t.contact.send}
                                 <FaEnvelope className="ml-2" />
                             </button>
                         </form>

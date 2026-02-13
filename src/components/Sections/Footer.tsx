@@ -1,7 +1,9 @@
 import React from 'react';
 import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaHeart, FaCode } from 'react-icons/fa';
+import { useLanguage } from '../../context/LanguageContext';
 
 export const Footer: React.FC = () => {
+    const { t } = useLanguage();
     const currentYear = new Date().getFullYear();
 
     return (
@@ -14,7 +16,7 @@ export const Footer: React.FC = () => {
                             Juan José Acevedo
                         </h3>
                         <p className="text-gray-400 mb-4">
-                            Líder de Proyectos de Software & Desarrollador Sr .NET con más de 10 años de experiencia en tecnologías enterprise.
+                            {t.footer.role}
                         </p>
                         <div className="flex space-x-4">
                             <a
@@ -29,14 +31,14 @@ export const Footer: React.FC = () => {
 
                     {/* Quick Links */}
                     <div>
-                        <h4 className="text-lg font-semibold text-white mb-4">Navegación</h4>
+                        <h4 className="text-lg font-semibold text-white mb-4">{t.footer.navigation}</h4>
                         <ul className="space-y-2">
                             {[
-                                { name: 'Inicio', href: '#inicio' },
-                                { name: 'Sobre Mí', href: '#sobre-mi' },
-                                { name: 'Experiencia', href: '#experiencia' },
-                                { name: 'Habilidades', href: '#habilidades' },
-                                { name: 'Contacto', href: '#contacto' },
+                                { name: t.nav.home, href: '#inicio' },
+                                { name: t.nav.about, href: '#sobre-mi' },
+                                { name: t.nav.experience, href: '#experiencia' },
+                                { name: t.nav.skills, href: '#habilidades' },
+                                { name: t.nav.contact, href: '#contacto' },
                             ].map((link, index) => (
                                 <li key={index}>
                                     <a
@@ -52,7 +54,7 @@ export const Footer: React.FC = () => {
 
                     {/* Contact Info */}
                     <div>
-                        <h4 className="text-lg font-semibold text-white mb-4">Contacto</h4>
+                        <h4 className="text-lg font-semibold text-white mb-4">{t.nav.contact}</h4>
                         <ul className="space-y-3">
                             <li className="flex items-center text-gray-400">
                                 <FaEnvelope className="mr-3 text-amber-500" />
@@ -76,10 +78,10 @@ export const Footer: React.FC = () => {
                 <div className="border-t border-gray-800 pt-8">
                     <div className="flex flex-col md:flex-row justify-between items-center">
                         <p className="text-gray-500 text-sm mb-4 md:mb-0">
-                            © {currentYear} Juan José Acevedo Merino. Todos los derechos reservados.
+                            © {currentYear} Juan José Acevedo Merino. {t.footer.rights}
                         </p>
                         <p className="text-gray-500 text-sm flex items-center">
-                            Hecho con <FaHeart className="text-red-500 mx-1" /> y <FaCode className="text-amber-500 mx-1" />
+                            {t.footer.madeWith} <FaHeart className="text-red-500 mx-1" /> & <FaCode className="text-amber-500 mx-1" />
                         </p>
                     </div>
                 </div>

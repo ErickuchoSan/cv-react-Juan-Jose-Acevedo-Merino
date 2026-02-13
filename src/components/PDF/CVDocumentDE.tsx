@@ -163,51 +163,51 @@ const SKILLS_PDF = [
 
 const EXPERIENCE_PDF = [
     {
-        role: 'Software Project Leader',
+        role: 'Software-Projektleiter',
         company: 'Grupo Salinas',
-        period: 'Mar 2022 – Present',
+        period: 'Mär 2022 – Aktuell',
         items: [
-            'Leading software development projects in the audit department',
-            'Planning and organizing work plans using Scrum methodology',
-            'Acting as intermediary between development teams, end users, and managers',
-            'Providing technical support for high-complexity implementations',
+            'Leitung von Softwareentwicklungsprojekten im Bereich Audit',
+            'Planung und Organisation von Arbeitsplänen nach der Scrum-Methodik',
+            'Vermittler zwischen Entwicklerteams, Endbenutzern und Managern',
+            'Technische Unterstützung bei hochkomplexen Implementierungen',
         ],
     },
     {
-        role: 'Senior .NET Developer',
+        role: 'Senior .NET Entwickler',
         company: 'TH TEC – Grupo Salinas',
-        period: 'Aug 2018 – Mar 2022',
+        period: 'Aug 2018 – Mär 2022',
         items: [
-            'Developing enterprise web applications with C#, ASP.NET, Angular, React, and jQuery',
-            'Building Web APIs with .NET Core using JWT and security tokens',
-            'Implementing AES and RSA-254 encryption for sensitive data',
-            'Creating stored procedures, triggers, and scheduled tasks in SQL Server',
-            'Performing vulnerability analysis using Checkmarx',
+            'Entwicklung von Enterprise-Webanwendungen mit C#, ASP.NET, Angular, React und jQuery',
+            'Erstellung von Web-APIs mit .NET Core unter Verwendung von JWT und Sicherheitstokens',
+            'Implementierung von AES- und RSA-254-Verschlüsselung für sensible Daten',
+            'Erstellung von Stored Procedures, Triggern und geplanten Tasks im SQL Server',
+            'Durchführung von Schwachstellenanalysen mit Checkmarx',
         ],
     },
     {
-        role: 'Senior .NET Developer',
+        role: 'Senior .NET Entwickler',
         company: 'Consult TI – Vitamedica',
         period: 'Aug 2017 – Aug 2018',
         items: [
-            'Developing with C#, ASP.NET, Angular, TypeScript, and jQuery',
-            'Implementing real-time features using SignalR for a Call Center system',
-            'Building web services for satellite systems integration',
+            'Entwicklung mit C#, ASP.NET, Angular, TypeScript und jQuery',
+            'Implementierung von Echtzeitfunktionen mit SignalR für ein Call-Center-System',
+            'Erstellung von Webdiensten für die Integration von Satellitensystemen',
         ],
     },
     {
-        role: 'Senior .NET Developer',
+        role: 'Senior .NET Entwickler',
         company: 'SIMMPAPEL – NAFINSA & FORD',
         period: 'Jul 2016 – Aug 2017',
         items: [
-            'Developing enterprise web applications with C#, ASP.NET, and jQuery',
-            'Converting electronic invoicing from XML v3.3 to v3.4 for FORD Motor Company',
-            'Supporting expense assignment and control modules for NAFINSA',
+            'Entwicklung von Enterprise-Webanwendungen mit C#, ASP.NET und jQuery',
+            'Konvertierung der elektronischen Rechnungsstellung von XML v3.3 auf v3.4 für FORD Motor Company',
+            'Support für Kostenzuweisungs- und Kontrollmodule für NAFINSA',
         ],
     },
 ];
 
-export const CVDocumentEN: React.FC = () => {
+export const CVDocumentDE: React.FC = () => {
     return (
         <Document>
             <Page size="LETTER" style={styles.page}>
@@ -218,13 +218,13 @@ export const CVDocumentEN: React.FC = () => {
                     </View>
                     <Text style={styles.name}>Juan José</Text>
                     <Text style={styles.name}>Acevedo Merino</Text>
-                    <Text style={styles.titleRole}>Project Leader & Sr .NET Developer</Text>
+                    <Text style={styles.titleRole}>Projektleiter & Sr .NET Entwickler</Text>
 
                     {/* Contact */}
                     <View style={styles.sidebarSection}>
-                        <Text style={styles.sidebarTitle}>CONTACT</Text>
+                        <Text style={styles.sidebarTitle}>KONTAKT</Text>
                         <View style={styles.contactRow}>
-                            <Text style={styles.contactLabel}>Phone:</Text>
+                            <Text style={styles.contactLabel}>Tel:</Text>
                             <Text style={styles.contactValue}>+52 55 3310 8924</Text>
                         </View>
                         <View style={styles.contactRow}>
@@ -232,18 +232,18 @@ export const CVDocumentEN: React.FC = () => {
                             <Text style={styles.contactValue}>juanjooscalb@outlook.com</Text>
                         </View>
                         <View style={styles.contactRow}>
-                            <Text style={styles.contactLabel}>Location:</Text>
-                            <Text style={styles.contactValue}>Mexico City, Mexico</Text>
+                            <Text style={styles.contactLabel}>Standort:</Text>
+                            <Text style={styles.contactValue}>Mexiko-Stadt, Mexiko</Text>
                         </View>
                         <View style={styles.contactRow}>
-                            <Text style={styles.contactLabel}>Age:</Text>
-                            <Text style={styles.contactValue}>35 years old</Text>
+                            <Text style={styles.contactLabel}>Alter:</Text>
+                            <Text style={styles.contactValue}>35 Jahre alt</Text>
                         </View>
                     </View>
 
                     {/* Skills */}
                     <View style={styles.sidebarSection}>
-                        <Text style={styles.sidebarTitle}>SKILLS</Text>
+                        <Text style={styles.sidebarTitle}>FÄHIGKEITEN</Text>
                         {SKILLS_PDF.map((skill, index) => (
                             <View key={index}>
                                 <Text style={styles.skillName}>{skill.name}</Text>
@@ -256,35 +256,35 @@ export const CVDocumentEN: React.FC = () => {
 
                     {/* Education */}
                     <View style={styles.sidebarSection}>
-                        <Text style={styles.sidebarTitle}>EDUCATION</Text>
+                        <Text style={styles.sidebarTitle}>AUSBILDUNG</Text>
                         <Text style={{ ...styles.sidebarText, fontFamily: 'Helvetica-Bold', fontSize: 9 }}>
-                            B.S. in Computer Science
+                            Lic. in Informatik
                         </Text>
                         <Text style={styles.sidebarText}>Universidad Autónoma de Tamaulipas</Text>
                         <Text style={styles.sidebarText}>2009 – 2013</Text>
                         <Text style={{ ...styles.sidebarText, marginTop: 6, fontFamily: 'Helvetica-Bold', fontSize: 9 }}>
-                            English Program
+                            Englischprogramm
                         </Text>
                         <Text style={styles.sidebarText}>Interlingua México • 2020-2021</Text>
                     </View>
 
                     {/* Certifications */}
                     <View style={styles.sidebarSection}>
-                        <Text style={styles.sidebarTitle}>CERTIFICATIONS</Text>
+                        <Text style={styles.sidebarTitle}>ZERTIFIZIERUNGEN</Text>
                         <Text style={styles.sidebarText}>• Scrum Fundamentals Certified (2018)</Text>
                         <Text style={styles.sidebarText}>• Software Dev Fundamentals - Microsoft (2013)</Text>
                     </View>
 
                     {/* Languages */}
                     <View style={styles.sidebarSection}>
-                        <Text style={styles.sidebarTitle}>LANGUAGES</Text>
+                        <Text style={styles.sidebarTitle}>SPRACHEN</Text>
                         <View style={styles.contactRow}>
-                            <Text style={styles.contactLabel}>Spanish:</Text>
-                            <Text style={styles.contactValue}>Native</Text>
+                            <Text style={styles.contactLabel}>Spanisch:</Text>
+                            <Text style={styles.contactValue}>Muttersprache</Text>
                         </View>
                         <View style={styles.contactRow}>
-                            <Text style={styles.contactLabel}>English:</Text>
-                            <Text style={styles.contactValue}>B1 Intermediate</Text>
+                            <Text style={styles.contactLabel}>Englisch:</Text>
+                            <Text style={styles.contactValue}>B1 Fortgeschritten</Text>
                         </View>
                     </View>
                 </View>
@@ -293,19 +293,19 @@ export const CVDocumentEN: React.FC = () => {
                 <View style={styles.main}>
                     {/* Objective */}
                     <View style={styles.mainSection}>
-                        <Text style={styles.mainTitle}>PROFESSIONAL OBJECTIVE</Text>
+                        <Text style={styles.mainTitle}>BERUFLICHES ZIEL</Text>
                         <Text style={styles.objectiveText}>
-                            Software development professional with over a decade of experience building web applications
-                            and APIs using .NET and .NET Core technologies for organizations in the medical, financial,
-                            and audit sectors. Specialized in requirements analysis, system optimization, and building
-                            robust user-oriented solutions. With 4 years of experience leading software projects, bringing
-                            leadership skills, coordination of multidisciplinary teams, and application of agile methodologies.
+                            Softwareentwicklungsprofi mit über einem Jahrzehnt Erfahrung in der Erstellung von Webanwendungen
+                            und APIs unter Verwendung von .NET- und .NET Core-Technologien für Organisationen im Medizin-, Finanz-
+                            und Auditsektor. Spezialisiert auf Anforderungsanalyse, Systemoptimierung und die Erstellung
+                            robuster, benutzerorientierter Lösungen. Mit 4 Jahren Erfahrung in der Leitung von Softwareprojekten,
+                            Führungskompetenz, Koordination multidisziplinärer Teams und Anwendung agiler Methoden.
                         </Text>
                     </View>
 
                     {/* Experience */}
                     <View style={styles.mainSection}>
-                        <Text style={styles.mainTitle}>PROFESSIONAL EXPERIENCE</Text>
+                        <Text style={styles.mainTitle}>BERUFSERFAHRUNG</Text>
                         {EXPERIENCE_PDF.map((exp, index) => (
                             <View key={index} style={styles.experienceEntry}>
                                 <Text style={styles.experienceRole}>{exp.role}</Text>
@@ -322,15 +322,15 @@ export const CVDocumentEN: React.FC = () => {
 
                     {/* Technical Skills */}
                     <View style={styles.mainSection}>
-                        <Text style={styles.mainTitle}>TECHNICAL STACK</Text>
+                        <Text style={styles.mainTitle}>TECHNISCHES PROFIL</Text>
                         <Text style={styles.objectiveText}>
-                            Languages: C#, JavaScript, TypeScript  |  Frameworks: ASP.NET, .NET Core, Angular, React, jQuery
+                            Sprachen: C#, JavaScript, TypeScript  |  Frameworks: ASP.NET, .NET Core, Angular, React, jQuery
                         </Text>
                         <Text style={styles.objectiveText}>
-                            Databases: SQL Server, MySQL  |  Security: JWT, AES, RSA-254, Checkmarx
+                            Datenbanken: SQL Server, MySQL  |  Sicherheit: JWT, AES, RSA-254, Checkmarx
                         </Text>
                         <Text style={styles.objectiveText}>
-                            Patterns: MVC, MVVM, Three Layer Architecture  |  Tools: Figma, Bootstrap, SignalR
+                            Muster: MVC, MVVM, Three Layer Architecture  |  Tools: Figma, Bootstrap, SignalR
                         </Text>
                     </View>
                 </View>
