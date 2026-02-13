@@ -30,14 +30,14 @@ export const Hero: React.FC = () => {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid md:grid-cols-2 gap-12 items-center">
                     <div className="text-center md:text-left">
-                        <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 animate-fade-in">
+                        <h1 className="text-4xl md:text-6xl font-bold text-slate-50 mb-4 animate-fade-in">
                             Juan José Acevedo Merino
                         </h1>
-                        <p className="text-xl md:text-2xl text-amber-400 mb-6 animate-fade-in-delay">
+                        <p className="text-xl md:text-2xl text-amber-500 mb-6 animate-fade-in-delay font-medium">
                             Líder de Proyectos de Software & Desarrollador Sr .NET
                         </p>
-                        <p className="text-lg text-gray-300 mb-8 max-w-xl animate-fade-in-delay-2">
-                            Profesional con más de <strong className="text-blue-400">una década de experiencia</strong> en
+                        <p className="text-lg text-slate-300 mb-8 max-w-xl animate-fade-in-delay-2 leading-relaxed">
+                            Profesional con más de <strong className="text-amber-400">una década de experiencia</strong> en
                             aplicaciones web y APIs con tecnologías .NET y .NET Core. Especializado en análisis de requerimientos,
                             optimización de sistemas y liderazgo de equipos multidisciplinarios con metodologías ágiles.
                         </p>
@@ -61,9 +61,9 @@ export const Hero: React.FC = () => {
                             <img
                                 src="/assets/images/profile.jpeg"
                                 alt="Juan José Acevedo Merino"
-                                className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-blue-400/50 shadow-2xl z-10"
+                                className="relative w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-amber-500/30 shadow-2xl z-10"
                             />
-                            <div className="absolute -top-2 -right-2 bg-gradient-to-r from-blue-600 to-amber-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg z-20">
+                            <div className="absolute -top-2 -right-2 bg-gradient-to-r from-slate-800 to-amber-600 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg z-20 border border-amber-500/30">
                                 +10 años
                             </div>
                         </div>
@@ -92,13 +92,13 @@ export const Hero: React.FC = () => {
                         </button>
 
                         <div className="text-center mb-8">
-                            <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-amber-500 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
+                            <div className="w-16 h-16 bg-gradient-to-br from-slate-700 to-amber-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg border border-amber-500/20">
                                 <FaDownload className="text-white text-2xl" />
                             </div>
-                            <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mb-2">
+                            <h3 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-2">
                                 Descargar CV
                             </h3>
-                            <p className="text-gray-500 dark:text-gray-400">
+                            <p className="text-slate-500 dark:text-slate-400">
                                 Selecciona el idioma de tu CV
                             </p>
                         </div>
@@ -108,16 +108,16 @@ export const Hero: React.FC = () => {
                             <PDFDownloadLink
                                 document={<CVDocument />}
                                 fileName="CV_Juan_Jose_Acevedo_Merino_ES.pdf"
-                                className="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-gray-200 dark:border-gray-600 hover:border-blue-500 dark:hover:border-blue-400 bg-gray-50 dark:bg-gray-700 hover:bg-blue-50 dark:hover:bg-blue-900/30 transition-all duration-300 cursor-pointer group"
+                                className="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 bg-slate-50 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-all duration-300 cursor-pointer group"
                                 onClick={() => setTimeout(() => setShowLangModal(false), 500)}
                             >
                                 {({ loading }) => (
                                     <>
                                         <span className="text-4xl mb-3">🇲🇽</span>
-                                        <span className="font-bold text-gray-800 dark:text-gray-200 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                        <span className="font-bold text-slate-700 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                                             Español
                                         </span>
-                                        <span className="text-xs text-gray-400 mt-1">
+                                        <span className="text-xs text-slate-400 mt-1">
                                             {loading ? 'Generando...' : 'Descargar PDF'}
                                         </span>
                                     </>
@@ -128,16 +128,16 @@ export const Hero: React.FC = () => {
                             <PDFDownloadLink
                                 document={<CVDocumentEN />}
                                 fileName="CV_Juan_Jose_Acevedo_Merino_EN.pdf"
-                                className="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-gray-200 dark:border-gray-600 hover:border-amber-500 dark:hover:border-amber-400 bg-gray-50 dark:bg-gray-700 hover:bg-amber-50 dark:hover:bg-amber-900/30 transition-all duration-300 cursor-pointer group"
+                                className="flex flex-col items-center justify-center p-6 rounded-xl border-2 border-slate-200 dark:border-slate-700 hover:border-amber-500 dark:hover:border-amber-500 bg-slate-50 dark:bg-slate-800 hover:bg-amber-50 dark:hover:bg-amber-900/20 transition-all duration-300 cursor-pointer group"
                                 onClick={() => setTimeout(() => setShowLangModal(false), 500)}
                             >
                                 {({ loading }) => (
                                     <>
                                         <span className="text-4xl mb-3">🇺🇸</span>
-                                        <span className="font-bold text-gray-800 dark:text-gray-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
+                                        <span className="font-bold text-slate-700 dark:text-slate-200 group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors">
                                             English
                                         </span>
-                                        <span className="text-xs text-gray-400 mt-1">
+                                        <span className="text-xs text-slate-400 mt-1">
                                             {loading ? 'Generating...' : 'Download PDF'}
                                         </span>
                                     </>

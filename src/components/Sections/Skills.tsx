@@ -17,10 +17,10 @@ interface TechCategoryProps {
 }
 
 const TechCategory: React.FC<TechCategoryProps> = ({ title, icon: Icon, items }) => (
-    <div className="glass-card tech-hover-effect p-6">
+    <div className="glass-card tech-hover-effect p-6 border-l-2 border-l-amber-500/50 hover:border-l-amber-500 transition-colors">
         <div className="flex items-center mb-4">
-            <Icon className="text-blue-600 text-2xl mr-3" />
-            <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{title}</h4>
+            <Icon className="text-amber-600 text-2xl mr-3" />
+            <h4 className="text-lg font-semibold text-slate-800 dark:text-slate-200">{title}</h4>
         </div>
         <div className="flex flex-wrap gap-2">
             {items.map((item, index) => (
@@ -50,7 +50,7 @@ export const Skills: React.FC = () => {
 
                 {/* Main Skills with Progress Bars */}
                 <div className="mb-16">
-                    <h3 className="text-2xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200">Tecnologías Principales</h3>
+                    <h3 className="text-2xl font-bold text-center mb-12 text-slate-800 dark:text-slate-200">Tecnologías Principales</h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
                             { icon: SiSharp, color: 'text-purple-600', name: 'C# / .NET', progress: 95 },
@@ -58,18 +58,18 @@ export const Skills: React.FC = () => {
                             { icon: SiAngular, color: 'text-red-500', name: 'Angular JS', progress: 80 },
                             { icon: SiReact, color: 'text-cyan-500', name: 'React JS', progress: 75 },
                         ].map((skill, index) => (
-                            <div key={index} className="skill-card glass-card tech-hover-effect p-6 text-center">
+                            <div key={index} className="skill-card glass-card tech-hover-effect p-6 text-center border-t-4 border-t-amber-500">
                                 <div className="skill-icon mb-4 inline-block">
                                     <skill.icon className={`text-4xl ${skill.color}`} />
                                 </div>
-                                <h4 className="skill-title text-lg font-semibold text-gray-800 dark:text-gray-200 mb-3">{skill.name}</h4>
-                                <div className="skill-bar w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-2 overflow-hidden">
+                                <h4 className="skill-title text-lg font-semibold text-slate-800 dark:text-slate-200 mb-3">{skill.name}</h4>
+                                <div className="skill-bar w-full bg-slate-200 dark:bg-slate-700 rounded-full h-3 mb-2 overflow-hidden">
                                     <div
-                                        className="skill-progress bg-gradient-to-r from-blue-600 to-amber-500 h-3 rounded-full relative"
+                                        className="skill-progress bg-gradient-to-r from-slate-700 to-amber-500 h-3 rounded-full relative"
                                         style={{ width: `${skill.progress}%` }}
                                     ></div>
                                 </div>
-                                <span className="text-sm text-blue-600 font-semibold">{skill.progress}%</span>
+                                <span className="text-sm text-amber-600 font-bold">{skill.progress}%</span>
                             </div>
                         ))}
                     </div>
@@ -95,7 +95,7 @@ export const Skills: React.FC = () => {
                             { name: 'SQL Server', icon: FaDatabase, color: 'text-red-600' },
                             { name: 'MySQL', icon: SiMysql, color: 'text-blue-600' },
                             { name: 'Stored Procedures', icon: FaDatabase, color: 'text-amber-600' },
-                            { name: 'Triggers & Jobs', icon: FaCogs, color: 'text-gray-600' },
+                            { name: 'Triggers & Jobs', icon: FaCogs, color: 'text-slate-600' },
                         ]}
                     />
                     <TechCategory
@@ -121,7 +121,7 @@ export const Skills: React.FC = () => {
 
                 {/* Soft Skills & Competencies */}
                 <div>
-                    <h3 className="text-2xl font-bold text-center mb-12 text-gray-800 dark:text-gray-200">Competencias Clave</h3>
+                    <h3 className="text-2xl font-bold text-center mb-12 text-slate-800 dark:text-slate-200">Competencias Clave</h3>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {[
                             { icon: FaProjectDiagram, title: 'Liderazgo de Proyectos', desc: 'Coordinación de equipos y gestión ágil con Scrum' },
@@ -134,10 +134,10 @@ export const Skills: React.FC = () => {
                             { icon: FaCogs, title: 'Optimización', desc: 'Mejora continua de procesos y sistemas' },
                             { icon: FaCode, title: 'Best Practices', desc: 'Código limpio, documentación y estándares' },
                         ].map((skill, index) => (
-                            <div key={index} className="soft-skill-card glass-card tech-hover-effect p-6 text-center">
-                                <skill.icon className="text-3xl text-blue-600 mb-4 mx-auto" />
-                                <h4 className="font-semibold mb-2 text-gray-800 dark:text-gray-200 text-lg">{skill.title}</h4>
-                                <p className="text-gray-600 dark:text-gray-300 text-sm">{skill.desc}</p>
+                            <div key={index} className="soft-skill-card glass-card tech-hover-effect p-6 text-center border-t-2 border-t-transparent hover:border-t-amber-500 transition-colors">
+                                <skill.icon className="text-3xl text-amber-600 mb-4 mx-auto" />
+                                <h4 className="font-semibold mb-2 text-slate-800 dark:text-slate-200 text-lg">{skill.title}</h4>
+                                <p className="text-slate-600 dark:text-slate-300 text-sm">{skill.desc}</p>
                             </div>
                         ))}
                     </div>

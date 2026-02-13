@@ -55,17 +55,17 @@ export const Footer: React.FC = () => {
                         <h4 className="text-lg font-semibold text-white mb-4">Contacto</h4>
                         <ul className="space-y-3">
                             <li className="flex items-center text-gray-400">
-                                <FaEnvelope className="mr-3 text-blue-500" />
+                                <FaEnvelope className="mr-3 text-amber-500" />
                                 <a href="mailto:juanjooscalb@outlook.com" className="hover:text-white transition-colors">
                                     juanjooscalb@outlook.com
                                 </a>
                             </li>
                             <li className="flex items-center text-gray-400">
-                                <FaPhone className="mr-3 text-blue-500" />
+                                <FaPhone className="mr-3 text-amber-500" />
                                 <span>55 3310 8924</span>
                             </li>
                             <li className="flex items-center text-gray-400">
-                                <FaMapMarkerAlt className="mr-3 text-blue-500" />
+                                <FaMapMarkerAlt className="mr-3 text-amber-500" />
                                 <span>Cuauhtémoc, CDMX</span>
                             </li>
                         </ul>
@@ -79,7 +79,7 @@ export const Footer: React.FC = () => {
                             © {currentYear} Juan José Acevedo Merino. Todos los derechos reservados.
                         </p>
                         <p className="text-gray-500 text-sm flex items-center">
-                            Hecho con <FaHeart className="text-red-500 mx-1" /> y <FaCode className="text-blue-500 mx-1" />
+                            Hecho con <FaHeart className="text-red-500 mx-1" /> y <FaCode className="text-amber-500 mx-1" />
                         </p>
                     </div>
                 </div>

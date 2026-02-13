@@ -16,7 +16,7 @@ export const Languages: React.FC = () => {
             level: 'B1 - Intermedio',
             percentage: 60,
             details: ['Lectura técnica', 'Comunicación básica profesional'],
-            color: 'from-blue-500 to-blue-600'
+            color: 'from-slate-500 to-slate-600'
         }
     ];
 
@@ -34,20 +34,20 @@ export const Languages: React.FC = () => {
                             <div key={index} className="glass-card tech-hover-effect p-6">
                                 <div className="flex items-center justify-between mb-4">
                                     <div className="flex items-center">
-                                        <FaLanguage className="text-blue-600 text-2xl mr-3" />
+                                        <FaLanguage className="text-amber-600 text-2xl mr-3" />
                                         <div>
-                                            <h3 className="text-xl font-bold text-gray-800 dark:text-gray-200">{lang.name}</h3>
-                                            <span className="text-sm font-semibold text-blue-600">
+                                            <h3 className="text-xl font-bold text-slate-800 dark:text-slate-200">{lang.name}</h3>
+                                            <span className="text-sm font-semibold text-slate-600 dark:text-slate-400">
                                                 {lang.level}
                                             </span>
                                         </div>
                                     </div>
-                                    <div className="text-3xl font-bold text-blue-600">
+                                    <div className="text-3xl font-bold text-slate-700 dark:text-slate-300">
                                         {lang.percentage}%
                                     </div>
                                 </div>
 
-                                <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-3 mb-4 overflow-hidden">
+                                <div className="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-3 mb-4 overflow-hidden">
                                     <div
                                         className={`h-3 rounded-full transition-all duration-500 bg-gradient-to-r ${lang.color}`}
                                         style={{ width: `${lang.percentage}%` }}
@@ -56,8 +56,8 @@ export const Languages: React.FC = () => {
 
                                 <ul className="space-y-1">
                                     {lang.details.map((detail, i) => (
-                                        <li key={i} className="text-sm text-gray-600 dark:text-gray-400 flex items-center">
-                                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-2"></span>
+                                        <li key={i} className="text-sm text-slate-600 dark:text-slate-400 flex items-center">
+                                            <span className="w-1.5 h-1.5 bg-amber-500 rounded-full mr-2"></span>
                                             {detail}
                                         </li>
                                     ))}
