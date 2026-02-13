@@ -1,7 +1,8 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 
-const profileImage = '/assets/images/profile.jpeg';
+// Build absolute URL so @react-pdf/renderer can fetch the image
+const profileImage = `${window.location.origin}/assets/images/profile.jpeg`;
 
 const styles = StyleSheet.create({
     page: {
