@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
     sidebar: {
         width: '35%',
-        backgroundColor: '#1e3a5f',
+        backgroundColor: '#0f172a', // Web Primary (Deep Navy)
         padding: 15,
         color: 'white',
     },
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
         overflow: 'hidden',
         marginBottom: 6,
         borderWidth: 2,
-        borderColor: '#d4a843',
+        borderColor: '#d97706', // Web Secondary (Elegant Gold)
         alignSelf: 'center',
     },
     profileImage: {
@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
     },
     titleRole: {
         fontSize: 8,
-        color: '#d4a843',
+        color: '#d97706', // Web Secondary
         marginBottom: 10,
         fontFamily: 'Helvetica-Bold',
     },
@@ -56,26 +56,26 @@ const styles = StyleSheet.create({
         fontSize: 10,
         fontWeight: 'bold',
         borderBottomWidth: 1,
-        borderBottomColor: '#d4a843',
+        borderBottomColor: '#d97706',
         paddingBottom: 2,
         marginBottom: 5,
-        color: '#d4a843',
+        color: '#d97706',
         fontFamily: 'Helvetica-Bold',
     },
     sidebarText: {
         fontSize: 8,
         marginBottom: 3,
-        color: '#e0e0e0',
+        color: '#cbd5e1', // Slate 300 for better contrast on dark
         lineHeight: 1.4,
     },
     mainTitle: {
         fontSize: 11,
         fontWeight: 'bold',
         borderBottomWidth: 2,
-        borderBottomColor: '#1e3a5f',
+        borderBottomColor: '#0f172a', // Web Primary
         paddingBottom: 2,
         marginBottom: 6,
-        color: '#1e3a5f',
+        color: '#0f172a',
         fontFamily: 'Helvetica-Bold',
     },
     mainSection: {
@@ -84,24 +84,24 @@ const styles = StyleSheet.create({
     experienceRole: {
         fontSize: 10,
         fontWeight: 'bold',
-        color: '#1e3a5f',
+        color: '#0f172a',
         fontFamily: 'Helvetica-Bold',
     },
     experienceCompany: {
         fontSize: 9,
-        color: '#d4a843',
+        color: '#d97706',
         marginBottom: 2,
         fontFamily: 'Helvetica-Bold',
     },
     experiencePeriod: {
         fontSize: 7,
-        color: '#666666',
+        color: '#64748b', // Slate 500
         marginBottom: 4,
     },
     experienceItem: {
         fontSize: 7.5,
         marginBottom: 2,
-        color: '#333333',
+        color: '#334155', // Slate 700
         lineHeight: 1.3,
         paddingLeft: 8,
     },
@@ -110,7 +110,7 @@ const styles = StyleSheet.create({
     },
     skillBar: {
         height: 5,
-        backgroundColor: '#e0e0e0',
+        backgroundColor: '#334155', // Slate 700 background for bar
         borderRadius: 3,
         marginTop: 2,
         marginBottom: 6,
@@ -118,11 +118,11 @@ const styles = StyleSheet.create({
     skillFill: {
         height: 5,
         borderRadius: 3,
-        backgroundColor: '#d4a843',
+        backgroundColor: '#d97706',
     },
     skillName: {
         fontSize: 8,
-        color: '#e0e0e0',
+        color: '#cbd5e1',
     },
     contactRow: {
         flexDirection: 'row' as const,
@@ -131,22 +131,22 @@ const styles = StyleSheet.create({
     },
     contactLabel: {
         fontSize: 8,
-        color: '#d4a843',
+        color: '#d97706',
         width: 55,
         fontFamily: 'Helvetica-Bold',
     },
     contactValue: {
         fontSize: 8,
-        color: '#e0e0e0',
+        color: '#e2e8f0', // Slate 200
         flex: 1,
     },
     bullet: {
         fontSize: 8,
-        color: '#d4a843',
+        color: '#d97706',
     },
     objectiveText: {
         fontSize: 8,
-        color: '#333333',
+        color: '#334155',
         lineHeight: 1.5,
         marginBottom: 10,
     },
