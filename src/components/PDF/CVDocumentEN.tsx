@@ -1,8 +1,7 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
 
-// Build absolute URL so @react-pdf/renderer can fetch the image
-const profileImage = `${window.location.origin}/assets/images/profile.jpeg`;
+
 
 const styles = StyleSheet.create({
     page: {
@@ -208,6 +207,7 @@ const EXPERIENCE_PDF = [
 ];
 
 export const CVDocumentEN: React.FC = () => {
+    const profileImage = `${window.location.origin}/assets/images/profile.jpeg`;
     return (
         <Document>
             <Page size="LETTER" style={styles.page}>
