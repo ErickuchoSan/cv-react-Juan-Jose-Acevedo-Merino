@@ -1,5 +1,5 @@
 
-import { Navbar } from './components/Layout/Navbar';
+import { Sidebar } from './components/Layout/Sidebar';
 import { Hero } from './components/Sections/Hero';
 import { About } from './components/Sections/About';
 import { Experience } from './components/Sections/Experience';
@@ -13,9 +13,9 @@ function App() {
 
 
     return (
-        <div className="min-h-screen">
-            <Navbar />
-            <main>
+        <div className="flex min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
+            <Sidebar />
+            <main className="flex-1 md:ml-80 transition-all duration-300 flex flex-col min-h-screen">
                 <Hero />
                 <About />
                 <Experience />
@@ -23,8 +23,8 @@ function App() {
                 <Languages />
                 <Projects />
                 <Contact />
+                <Footer />
             </main>
-            <Footer />
         </div>
     );
 }
