@@ -1,5 +1,7 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
+
+const profileImage = '/assets/images/profile.jpeg';
 
 const styles = StyleSheet.create({
     page: {
@@ -12,6 +14,21 @@ const styles = StyleSheet.create({
         backgroundColor: '#1e3a5f',
         padding: 20,
         color: 'white',
+        alignItems: 'center',
+    },
+    profileImageContainer: {
+        width: 90,
+        height: 90,
+        borderRadius: 45,
+        overflow: 'hidden',
+        marginBottom: 10,
+        borderWidth: 2,
+        borderColor: '#d4a843',
+    },
+    profileImage: {
+        width: 90,
+        height: 90,
+        objectFit: 'cover',
     },
     main: {
         width: '65%',
@@ -195,6 +212,9 @@ export const CVDocumentEN: React.FC = () => {
             <Page size="LETTER" style={styles.page}>
                 {/* Sidebar */}
                 <View style={styles.sidebar}>
+                    <View style={styles.profileImageContainer}>
+                        <Image style={styles.profileImage} src={profileImage} />
+                    </View>
                     <Text style={styles.name}>Juan José</Text>
                     <Text style={styles.name}>Acevedo Merino</Text>
                     <Text style={styles.titleRole}>Project Leader & Sr .NET Developer</Text>
